@@ -3,9 +3,9 @@ from . import views
 from rest_framework.routers import DefaultRouter
 
 urlpatterns = [
-    path('collections/', views.CollectionList.as_view(), name='collection_list'),
-    path('collections/<int:pk>', views.CollectionDetail.as_view(),
-         name='collection_detail'),
-    path('favorites/', views.FavoriteList.as_view(), name='favorite_list'),
-    path('favorites/<int:pk>', views.FavoriteDetail.as_view(), name='favorite_detail')
+    path('maps/', views.MapList.as_view(), name='map_list'),
+    path('maps/<int:pk>', views.MapDetail.as_view(),
+         name='map_detail'),
+    path('detours/', views.DetourList.as_view(), name='detour_list'),
+    path('detours/<int:pk>', views.DetourDetail.as_view(), name='detour_detail')
 ]

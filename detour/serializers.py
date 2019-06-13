@@ -1,25 +1,25 @@
 from rest_framework import serializers
-from .models import Collection, Favorite
+from .models import Map, Detour
 
 
-class CollectionSerializer(serializers.HyperlinkedModelSerializer):
-    favorites = serializers.HyperlinkedRelatedField(
-        view_name='favorite_detail',
+class MapSerializer(serializers.HyperlinkedModelSerializer):
+    detours = serializers.HyperlinkedRelatedField(
+        view_name='detour_detail',
         many=True,
         read_only=True
     )
 
     class Meta:
-        model = Collection
-        fields = ('id', 'name', 'city', 'country', 'favorites')
+        model = Map
+        fields = ('id', 'title', 'city', 'country', 'description', 'detours')
 
 
-class FavoriteSerializer(serializers.HyperlinkedModelSerializer):
-    collection = serializers.HyperlinkedRelatedField(
-        view_name='collection_detail',
+class DetourSerializer(serializers.HyperlinkedModelSerializer):
+    map = serializers.HyperlinkedRelatedField(
+        view_name='map_detail',
         read_only=True
     )
 
     class Meta:
-        model = Favorite
-        fields = ('id', 'collection', 'name', 'lat', 'long', 'notes')
+        model = Detour
+        fields = ('id', 'collection', 'name', 'lat', 'lng', 'notes')

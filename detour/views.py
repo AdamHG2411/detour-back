@@ -1,23 +1,23 @@
 from rest_framework import generics
-from .serializers import CollectionSerializer, FavoriteSerializer
-from .models import Collection, Favorite
+from .serializers import MapSerializer, DetourSerializer
+from .models import Map, Detour
 
 
-class CollectionList(generics.ListCreateAPIView):
-    queryset = Collection.objects.all()
-    serializer_class = CollectionSerializer
+class MapList(generics.ListCreateAPIView):
+    queryset = Map.objects.all()
+    serializer_class = MapSerializer
 
 
-class CollectionDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Collection.objects.all()
-    serializer_class = CollectionSerializer
+class MapDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Map.objects.all()
+    serializer_class = MapSerializer
 
 
-class FavoriteList(generics.ListCreateAPIView):
-    queryset = Favorite.objects.all()
-    serializer_class = FavoriteSerializer
+class DetourList(generics.ListCreateAPIView):
+    queryset = Detour.objects.all()
+    serializer_class = DetourSerializer
 
 
-class FavoriteDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Favorite.objects.all()
-    serializer_class = FavoriteSerializer
+class DetourDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Detour.objects.all()
+    serializer_class = DetourSerializer
