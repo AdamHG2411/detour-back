@@ -1,0 +1,1 @@
+web: gunicorn detour_django.wsgi

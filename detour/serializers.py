@@ -23,3 +23,6 @@ class DetourSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Detour
         fields = ('id', 'map', 'name', 'lat', 'lng', 'notes')
+
+    def create(self, validated_data):
+        detour = Detour.objects.create(validated_data)
