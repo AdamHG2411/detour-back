@@ -22,4 +22,4 @@ class DetourSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Detour
-        fields = ('id', 'collection', 'name', 'lat', 'lng', 'notes')
+        fields = ('id', 'map', 'name', 'lat', 'lng', 'notes')
